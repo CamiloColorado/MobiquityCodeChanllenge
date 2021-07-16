@@ -12,3 +12,71 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+# exclude IntelliJ project files
+.idea/
+*.iws
+*.ipr
+*.iml
+atlassian-ide-plugin.xml
+
+# ignore Eclipse project files
+.classpath
+.project
+.settings
+.springBeans
+.factoryPath
+
+# exclude maven target directories everywhere
+target/
+
+# maven release plugin
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.tag
+/release.properties
+
+# maven tmp directory used by docker integration test
+_tmp
+
+# Mac
+.DS_Store
+
+# VIM swap files
+*.swp
+
+# Log files
+*.log
+
+# python compiled
+*.pyc
+
+# gitattributes only on root level
+/.gitattributes
+
+# LibreOffice lock files
+.~lock.*
+
+# packer manifests
+packer_manifest.json
+# pyenv
+.python-version
+# prevent to upload generated ssh_keymaterials
+ssh_keymaterials*
+.vscode/
+# ansible retry files
+*.retry
+
+# compiled dashboards
+_infrastructure/**/dashboards/*.json
+
+# VERSION FILE
+/VERSION
+
+# ignore apigee secrets
+.apigee_secrets.yml
+
+maven/
+pom.xml.versionsBackup
+lombok.config
+/bin/
