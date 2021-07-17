@@ -6,7 +6,7 @@ Feature: Blog API Response Status Code With Invalid Data Eest
   @UserInvalidData
   Scenario Outline: the user validates response status code when user name input data is invalid
     Given I search for an invalid user "<username>"
-    Then the response status code must be "404"
+    Then the response status code must be 404
 
     Examples: 
       | username |
@@ -14,8 +14,8 @@ Feature: Blog API Response Status Code With Invalid Data Eest
 
   @PostsInvalidData
   Scenario Outline: the user validates response status code when user id input data is invalid
-    Given I search for posts made by an invalid user "<userid>" with a "<routetype>"
-    Then the response status code must be "404"
+    Given I search for posts made by an invalid user <userid> with a "<routetype>"
+    Then the response status code must be 404
 
     Examples: 
       | routetype | userid |
@@ -24,8 +24,8 @@ Feature: Blog API Response Status Code With Invalid Data Eest
 
   @CommentsInvalidData
   Scenario Outline: the user validates response status code when post id input data is invalid
-    Given I search for comments made in an invalid post "<postid>" with a "<routetype>"
-    Then the response status code must be "404"
+    Given I search for comments made in an invalid post <postid> with a "<routetype>"
+    Then the response status code must be 404
 
     Examples: 
       | routetype | postid |
@@ -35,7 +35,7 @@ Feature: Blog API Response Status Code With Invalid Data Eest
   @UserInvalidParameterData
   Scenario Outline: the user validates the response code when a parameter is invalid for the user request
     Given I search for an user with the parameter "<parameter>"
-    Then the response status code must be "400"
+    Then the response status code must be 400
 
     Examples: 
       | parameter |
@@ -44,7 +44,7 @@ Feature: Blog API Response Status Code With Invalid Data Eest
   @PostsInvalidParameterData
   Scenario Outline: the user validates the response code when a parameter is invalid for the posts request
     Given I search for posts with the parameter "<parameter>"
-    Then the response status code must be "400"
+    Then the response status code must be 400
 
     Examples: 
       | parameter |
@@ -53,7 +53,7 @@ Feature: Blog API Response Status Code With Invalid Data Eest
   @CommentsInvalidParameterData
   Scenario Outline: the user validates the response code when a parameter is invalid for the comments request
     Given I search for comments with the parameter "<parameter>"
-    Then the response status code must be "400"
+    Then the response status code must be 400
 
     Examples: 
       | parameter |
