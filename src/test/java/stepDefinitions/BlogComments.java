@@ -1,6 +1,8 @@
 package stepDefinitions;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.everyItem;
+import static org.hamcrest.Matchers.hasKey;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -67,6 +69,20 @@ public class BlogComments {
 			}
 		});
 		assertTrue("There are some emails with wrong format.", wrongEmails.isEmpty());
+	}
+	
+	@Then("The response must have the field {string}")
+	public void validateResponseFields(String keyField) {
+		response.then().assertThat().body("",everyItem(hasKey(keyField)));
+	}
+	
+	@Then("The get comments response must have the field {string}")
+	public void validateCommentResponse(String keyField) {
+		List<Integer> postIds = response.jsonPath().getList("id");
+		postIds.stream().forEach(postId -> {
+			given().accept(contentType).param("postId", postId).when().get("comments").prettyPeek().then()
+					.statusCode(200).assertThat().body("", everyItem(hasKey(keyField)));
+		});
 	}
 
 }

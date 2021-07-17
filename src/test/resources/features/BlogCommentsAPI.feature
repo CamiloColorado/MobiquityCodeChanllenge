@@ -1,5 +1,5 @@
 #Author: Camilo COlorado
-@BlogComments
+@BlogComments @BlogAPITests
 Feature: Blog Comments API Test
   As a user i want to validate the Blog Comments API
 

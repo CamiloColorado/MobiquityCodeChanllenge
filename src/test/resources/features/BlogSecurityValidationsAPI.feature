@@ -1,5 +1,5 @@
 #Author: Camilo Colorado
-@BlogSecurityValidations
+@BlogSecurityValidations @BlogAPITests
 Feature: Blog API Security Validations
   As a user i want to validate the things that can possibly go wrong
 
@@ -15,7 +15,7 @@ Feature: Blog API Security Validations
   @NoKeyFieldPosts
   Scenario Outline: the user validates that the posts data has the key field to continue with the workflow
     Given I search for user "<username>"
-    When I search the post written by the user
+    When I search the posts written by the user
     Then The response must have the field "<keyfield>"
 
     Examples: 
@@ -25,7 +25,7 @@ Feature: Blog API Security Validations
   @NoKeyFieldComments
   Scenario Outline: the user validates that the comments data has the key field to continue with the workflow
     Given I search for user "<username>"
-    When I search the post written by the user
+    When I search the posts written by the user
     Then The get comments response must have the field "<keyfield>"
 
     Examples: 
