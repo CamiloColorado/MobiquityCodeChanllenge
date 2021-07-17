@@ -1,6 +1,6 @@
 #Author: Camilo Colorado
-@BlogSecurityValidations @BlogAPITests
-Feature: Blog API Security Validations
+@BlogKeyFieldsValidation @BlogAPITests
+Feature: Blog API Key Fields Validation Test
   As a user i want to validate the things that can possibly go wrong
 
   @NoKeyFieldUser
