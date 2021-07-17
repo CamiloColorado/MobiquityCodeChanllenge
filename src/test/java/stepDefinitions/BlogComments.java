@@ -36,7 +36,6 @@ public class BlogComments {
 
 	@Given("I search for user {string}")
 	public void searchForUserName(String userName) {
-		RestAssured.baseURI = ConfigurationFileReader.getProperty("URI");
 		response = given().accept(contentType).param("username", userName).when().get("users").prettyPeek();
 		assertEquals(200, response.getStatusCode());
 	}

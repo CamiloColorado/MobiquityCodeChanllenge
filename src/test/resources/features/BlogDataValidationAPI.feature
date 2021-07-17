@@ -21,12 +21,11 @@ Feature: Blog API Data Validation Test
     Examples: 
       | username |
       | Delphine |
-      
+
   @SpecificPostCommentData
   Scenario Outline: the user validates if there are comments on posts made by a specific user name
     Given I get the list of users
-    And I get the posts made by "<username>"
-    When I get the comments made on the post 
+    When I get the posts made by "<username>"
     Then the posts must have comments
 
     Examples: 
