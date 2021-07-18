@@ -42,4 +42,4 @@ jobs:
       - run: gradle test
       
       - store_test_results:
-          path: /target
+          path: /build/test-results/test
