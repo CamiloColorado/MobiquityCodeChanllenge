@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(glue = "stepDefinitions", features = "src/test/resources/features", dryRun = false, tags = "@EmailFormatValidation", plugin = {
+@CucumberOptions(glue = "stepDefinitions", features = "src/test/resources/features", dryRun = false, tags = "@BlogAPITests", plugin = {
 		"json:target/cucumber.json", "pretty", "html:target/cucumber-reports" })
 
 public class Runner {
