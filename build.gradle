@@ -23,7 +23,7 @@ dependencies {
 	implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 	testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.10.4'
 	implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.10.4'
-	compile group: 'junit', name: 'junit', version: '4.12'
+	testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 	testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
 	implementation group: 'commons-validator', name: 'commons-validator', version: '1.7'
 }
