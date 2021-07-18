@@ -44,10 +44,10 @@ jobs:
       - run:
           name: Save test results
           command: |
-            mkdir -p ~/test-results/junit/
-            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/test-results/junit/ \;
+            mkdir -p ~/test-results/test/junit/
+            find . -type f -regex ".*/build/test-results/test/.*xml" -exec cp {} ~/test-results/test/junit/ \;
           when: always
       - store_test_results:
-          path: ~/test-results
+          path: ~/test-results/test
       - store_artifacts:
-          path: ~/test-results/junit
+          path: ~/test-results/test/junit
