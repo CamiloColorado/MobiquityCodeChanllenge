@@ -4,8 +4,8 @@ Feature: Blog API Response Status Code With Invalid Data Eest
   as a user i want to validate the response status codes when the input data is invalid
 
   @UserInvalidData
-  Scenario Outline: the user validates response status code when user name input data is invalid
-    Given I search for an invalid user "<username>"
+  Scenario Outline: the user validates response status code when user name input data does not exist
+    Given I search for a not existing user "<username>"
     Then the response status code must be 404
 
     Examples: 
@@ -13,8 +13,8 @@ Feature: Blog API Response Status Code With Invalid Data Eest
       | Camilo   |
 
   @PostsInvalidData
-  Scenario Outline: the user validates response status code when user id input data is invalid
-    Given I search for posts made by an invalid user <userid> with a "<routetype>"
+  Scenario Outline: the user validates response status code when user id input data does not exist
+    Given I search for posts made by a not existing user <userid> with a "<routetype>"
     Then the response status code must be 404
 
     Examples: 
@@ -23,8 +23,8 @@ Feature: Blog API Response Status Code With Invalid Data Eest
       | nested    |    100 |
 
   @CommentsInvalidData
-  Scenario Outline: the user validates response status code when post id input data is invalid
-    Given I search for comments made in an invalid post <postid> with a "<routetype>"
+  Scenario Outline: the user validates response status code when post id input data does not exist
+    Given I search for comments made in a not existing post <postid> with a "<routetype>"
     Then the response status code must be 404
 
     Examples: 
