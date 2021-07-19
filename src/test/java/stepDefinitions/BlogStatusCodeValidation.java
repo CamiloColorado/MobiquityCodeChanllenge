@@ -22,7 +22,7 @@ public class BlogStatusCodeValidation {
 		contentType = ContentType.JSON;
 	}
 
-	@Given("I search for an invalid user {string}")
+	@Given("I search for a not existing user {string}")
 	public void searchInvalidUser(String userName) {
 		response = given().accept(contentType).param("username", userName).when().get("users").prettyPeek();
 	}
@@ -32,7 +32,7 @@ public class BlogStatusCodeValidation {
 		assertEquals(expectedCode, response.getStatusCode());
 	}
 
-	@Given("I search for posts made by an invalid user {int} with a {string}")
+	@Given("I search for posts made by a not existing user {int} with a {string}")
 	public void searchPostByInvalidUser(int userId, String routeType) {
 		if (routeType.equals("normal")) {
 			response = given().accept(contentType).param("userId", userId).when().get("posts").prettyPeek();
@@ -41,7 +41,7 @@ public class BlogStatusCodeValidation {
 		}
 	}
 
-	@Given("I search for comments made in an invalid post {int} with a {string}")
+	@Given("I search for comments made in a not existing post {int} with a {string}")
 	public void searchCommentsByInvalidPost(int postId, String routeType) {
 		if (routeType.equals("normal")) {
 			response = given().accept(contentType).param("postId", postId).when().get("comments").prettyPeek();
